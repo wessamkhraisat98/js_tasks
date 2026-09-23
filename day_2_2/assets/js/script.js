@@ -6,7 +6,7 @@ function reverseNumber(number) {
 
     while (number > 0) {
 
-        let digit = number % 10; // then first time got 3
+        let digit = number % 10; // then first time got 3 
 
         reversed = reversed * 10 + digit; // 0*10 + 3 = 3  then 3*10 + 4 = 34
 
