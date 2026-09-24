@@ -1,0 +1,40 @@
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    padding: 30px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+#message {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
