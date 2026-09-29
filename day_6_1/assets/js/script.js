@@ -9,7 +9,6 @@ fetch("menu.json")
         }
         return response.json();
     })
-    .then(response => response.json())
     .then(menu => {
 
         localStorage.setItem("menu", JSON.stringify(menu));
@@ -37,7 +36,33 @@ fetch("menu.json")
     .catch(error => {
         console.error("Error:", error);
     });
+function showMenu(){
+    const savedOrder = localStorage.getItem("order");
+    const savedUsername = sessionStorage.getItem("username");
+    document.getElementById("message").innerHTML = `
+        <div class="message-card">
 
+            <h2 class="message-title">
+                Welcome, ${savedUsername}
+            </h2>
+
+            <div class="order-info">
+
+                <p class="info-row">
+                    <strong class="info-label">Saved Order:</strong>
+                    <span class="info-value">${savedOrder}</span>
+                </p>
+
+                <p class="info-row">
+                    <strong class="info-label">Saved Username:</strong>
+                    <span class="info-value">${savedUsername}</span>
+                </p>
+
+            </div>
+
+        </div>
+    `;
+}
 
 form.onsubmit = function(e) {
 
@@ -84,27 +109,7 @@ form.onsubmit = function(e) {
     const savedOrder = localStorage.getItem("order");
     const savedUsername = sessionStorage.getItem("username");
 
-    document.getElementById("message").innerHTML = `
-        <div class="message-card">
-
-            <h2 class="message-title">
-                Welcome, ${savedUsername}
-            </h2>
-
-            <div class="order-info">
-
-                <p class="info-row">
-                    <strong class="info-label">Saved Order:</strong>
-                    <span class="info-value">${savedOrder}</span>
-                </p>
-
-                <p class="info-row">
-                    <strong class="info-label">Saved Username:</strong>
-                    <span class="info-value">${savedUsername}</span>
-                </p>
-
-            </div>
-
-        </div>
-    `;
+    showMenu();
 };
+
+showMenu();
